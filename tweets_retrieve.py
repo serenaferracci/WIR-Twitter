@@ -25,15 +25,15 @@ print("["+time.ctime()+"] Start collecting tweets, found "+str(len(result[0]['tr
 x=0
 y=0
 for i in range (0, len(result[0]['trends'])):
-    if not os.path.exists("./Tweets/"+result[0]['trends'][i]['name']):
-        os.mkdir("./Tweets/"+result[0]['trends'][i]['name'])
+    if not os.path.exists("./Tweets_test/"+result[0]['trends'][i]['name']):
+        os.mkdir("./Tweets_test/"+result[0]['trends'][i]['name'])
     while True:
         try:
             tweets=tweepy.Cursor(api.search, q = result[0]['trends'][i]['name'], show_user = True, tweet_mode='extended').items(100)
             for tw in tweets:
                 x+=1
                 y+=1
-                path="./Tweets/"+result[0]['trends'][i]['name']+"/"+str(tw.user.id)+"";
+                path="./Tweets_test/"+result[0]['trends'][i]['name']+"/"+str(tw.user.id)+"";
                 f = open(path, 'w')
                 if ('retweeted_status' in dir(tw)):
                     f.write(tw.retweeted_status.full_text)
