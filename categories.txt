@@ -1,7 +1,8 @@
 Politics
-Art
 Movie
 Sport
 Music
-Computer
+Society
+Health
+Event
 Science
