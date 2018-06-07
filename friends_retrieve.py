@@ -4,7 +4,7 @@ import os
 import sys
 import time
 
-
+NUM_USERS=5
 if (len(sys.argv)!=2):
     print("You have to specify an initial seed!")
     exit(1)
@@ -46,13 +46,21 @@ elif seed==2:
     access_token="315710007-dTyuxZoGhBGFCMrarAqt27WaYuKNSBW2P5IZKtLA"
     access_token_secret="xUqFFO3LFroFjgO5XVAW1MYkYQhHoxmyLzMAwtHFh8Do1"
 
-else:
+elif seed==3:
     #Riccardo's key
     consumer_key = 'wgyF8eM0142tmip6dwNFNR7gl'
     consumer_secret = 'rGPAlNBF5nrSE6fofq23Bt5BwlBNpd1kLhjUofhEw2dMmoTv7V'
 
     access_token="1000293863163129856-GoWCSNnKiOm03b4KgrSOdkgeUcJZ99"
     access_token_secret="2QURVPydYfJfiF8u36ZS7NqfewT1QfgTfVZSSjWnQGH50"
+
+else:
+    #Ilaria's keys
+    consumer_key="CCQuRUXXwmWtKLWLvZrME5Tu3"
+    consumer_secret="RPoEEiEofMZxjfzywYUoIUT8NTs1WUN5IO6ZdqmMxmBAIEhTiM"
+
+    access_token="792629040595214336-w4Zrb1V4rycmtgltYXro3vgkdIKb9Kt"
+    access_token_secret="nK7ZyfZsq9gwBgVDomvg8bfrqHQx81FRqbPjsQvE94SDr"
 
 #auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 #auth.set_access_token(access_token, access_token_secret)
@@ -83,7 +91,7 @@ users = []
 directory=os.listdir("Tweets")
 i=0
 for i in range(0, len(directory)):
-    if i%4!=seed:   #this is not your folder, please continue
+    if i%NUM_USERS!=seed:   #this is not your folder, please continue
         continue
     dir=directory[i]
     listdir=os.listdir("Tweets/"+dir)
@@ -112,11 +120,9 @@ for i in range(0, len(directory)):
                 print("["+time.ctime()+"] "+e.reason);
                 if("88" in e.reason):
                     status=api.rate_limit_status()
-                    for elem in status["resources"]:
-                        #if int(status["resources"][elem]["remaining"])==0:
-                        for elem2 in status["resources"][elem]:
-                            if status["resources"][elem][elem2]["remaining"]==0:
-                                print(status["resources"][elem])
+                    millis=status["resources"]["friends"]["/friends/ids"]["reset"]-int(time.time())
+                    if status["resources"]["friends"]["/friends/ids"]["remaining"]==0:
+                        print("["+time.ctime()+"] Still missing "+str(millis)+ " seconds")
                     time.sleep(300)
                     print("["+time.ctime()+"] Retry now...")
                     continue;
