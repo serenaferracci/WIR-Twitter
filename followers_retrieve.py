@@ -114,7 +114,7 @@ for i in range(0, len(directory)):
                         #if int(status["resources"][elem]["remaining"])==0:
                         for elem2 in status["resources"][elem]:
                             if status["resources"][elem][elem2]["remaining"]==0:
-                                print(status["resources"][elem][elem2])
+                                print(status["resources"][elem])
                     time.sleep(300)
                     print("["+time.ctime()+"] Retry now...")
                     continue;
