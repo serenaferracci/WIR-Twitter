@@ -48,7 +48,7 @@ elif seed==2:
 
 else:
     #Riccardo's key
-    consumer_token = 'wgyF8eM0142tmip6dwNFNR7gl'
+    consumer_key = 'wgyF8eM0142tmip6dwNFNR7gl'
     consumer_secret = 'rGPAlNBF5nrSE6fofq23Bt5BwlBNpd1kLhjUofhEw2dMmoTv7V'
 
     access_token="1000293863163129856-GoWCSNnKiOm03b4KgrSOdkgeUcJZ99"
