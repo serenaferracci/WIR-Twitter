@@ -97,6 +97,8 @@ except tweepy.RateLimitError:
 directory=os.listdir("Tweets")
 i=0
 for i in range(0, len(directory)):
+    if ".txt" in directory[i]:
+        continue
     if i%NUM_USERS!=seed:   #this is not your folder, please continue
         continue
     dir=directory[i]
