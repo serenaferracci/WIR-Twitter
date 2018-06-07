@@ -112,11 +112,9 @@ for i in range(0, len(directory)):
                 print("["+time.ctime()+"] "+e.reason);
                 if("88" in e.reason):
                     status=api.rate_limit_status()
-                    for elem in status["resources"]:
-                        #if int(status["resources"][elem]["remaining"])==0:
-                        for elem2 in status["resources"][elem]:
-                            if status["resources"][elem][elem2]["remaining"]==0:
-                                print(status["resources"][elem])
+                    millis=status["resources"]["friends"]["/friends/ids"]["reset"]-int(time.time())
+                    if status["resources"]["friends"]["/friends/ids"]["remaining"]==0:
+                        print("["+time.ctime()+"] Still missing "+str(millis)+ " seconds")
                     time.sleep(300)
                     print("["+time.ctime()+"] Retry now...")
                     continue;
