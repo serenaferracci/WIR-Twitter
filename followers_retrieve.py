@@ -97,6 +97,8 @@ except tweepy.RateLimitError:
 directory=os.listdir("Tweets")
 i=0
 for i in range(0, len(directory)):
+    if ".DS_Store" in directory[i]:
+        continue
     if ".txt" in directory[i]:
         continue
     if i%NUM_USERS!=seed:   #this is not your folder, please continue
@@ -104,6 +106,8 @@ for i in range(0, len(directory)):
     dir=directory[i]
     listdir=os.listdir("Tweets/"+dir)
     for file in listdir:
+        if ".DS_Store" in file:
+            continue
         if (".txt" in file):
             continue
         if ((""+file + " - followers.txt") in listdir):
@@ -114,7 +118,7 @@ for i in range(0, len(directory)):
                 print("["+time.ctime()+"] Retrieving followers for user "+file)
                 ids_fl = []
                 page_count = 0
-                for page in tweepy.Cursor(api.followers_ids, id=file, count=5000).pages():
+                for page in tweepy.Cursor(api.followers_ids, id=file, count=800000).pages():
                     page_count += 1
                     ids_fl.extend(page)
                 out_fl = open("Tweets/" + dir + "/" + file + " - followers.txt", "w")
