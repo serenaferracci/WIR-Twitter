@@ -91,6 +91,7 @@ for i in range(0, len(directory)):
             continue
         while True:
             try:
+                print("["+time.ctime()+"] Retrieving followers for user "+file)
                 ids_fl = []
                 page_count = 0
                 for page in tweepy.Cursor(api.followers_ids, id=file, count=5000).pages():
@@ -105,7 +106,9 @@ for i in range(0, len(directory)):
                 break
             except tweepy.TweepError as e:
                 print("["+time.ctime()+"] "+e.reason);
-                time.sleep(300)
-                print("["+time.ctime()+"] Retry now...")
-                continue;
+                if("88" in e.reason):
+                    time.sleep(300)
+                    print("["+time.ctime()+"] Retry now...")
+                    continue;
+                break
     print("["+time.ctime()+"] End of the process, collected friends and followers!")
