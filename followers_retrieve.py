@@ -123,6 +123,9 @@ for i in range(0, len(directory)):
                         for elem2 in status["resources"][elem]:
                             if status["resources"][elem][elem2]["remaining"]==0:
                                 print(status["resources"][elem])
+                                millis=status["resources"][elem][elem2]["reset"]-int(time.time())
+
+                                print("should wait " + str(millis) +" milliseconds")
                     time.sleep(300)
                     print("["+time.ctime()+"] Retry now...")
                     continue;
