@@ -4,6 +4,18 @@ import os
 import sys
 import time
 
+
+if (len(sys.argv)!=2):
+    print("You have to specify an initial seed!")
+    exit(1)
+
+#seed value indicates which folders it selects
+seed=int(sys.argv[1]) #please write an integer as parameter
+
+#seed=0 Emanuele
+#seed=1 Serena
+#seed=2 Ludovica
+
 usa_location = 23424977
 
 
@@ -45,7 +57,12 @@ except tweepy.RateLimitError:
     print("["+time.ctime()+"] Retry now...")
     continue;
 '''
-for dir in os.listdir("Tweets"):
+directory=os.listdir("Tweets")
+i=0
+for i in range(0, len(directory)):
+    if i%3!=seed:   #this is not your folder, please continue
+        continue
+    dir=directory[i]
     listdir=os.listdir("Tweets/"+dir)
     for file in listdir:
         if (".txt" in file):
