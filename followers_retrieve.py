@@ -40,11 +40,11 @@ elif seed==1:
 
 else:
     #Ludo's keys
-    consumer_key=""
-    consumer_secret=""
+    consumer_key="dDEH0jtYRRvXPsx55LJqF86kq"
+    consumer_secret="Bt5UWBvE3gMZQkDzdCU5Iuk0gfooGxVR9dYai76WEzxhLKSnaM"
 
-    access_token=""
-    access_token_secret=""
+    access_token="315710007-dTyuxZoGhBGFCMrarAqt27WaYuKNSBW2P5IZKtLA"
+    access_token_secret="xUqFFO3LFroFjgO5XVAW1MYkYQhHoxmyLzMAwtHFh8Do1"
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
