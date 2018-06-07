@@ -38,13 +38,21 @@ elif seed==1:
     access_token = "455678422-G3uLg4O7ulLaZbyVhaSa2zPZamyHjC6eUClw0hUC"
     access_token_secret = "gGTh7L7O5P7EhsKiqcESXqA9RXjiafNZOrc5MVXBEap4i"
 
-else:
+elif seed==2:
     #Ludo's keys
     consumer_key="dDEH0jtYRRvXPsx55LJqF86kq"
     consumer_secret="Bt5UWBvE3gMZQkDzdCU5Iuk0gfooGxVR9dYai76WEzxhLKSnaM"
 
     access_token="315710007-dTyuxZoGhBGFCMrarAqt27WaYuKNSBW2P5IZKtLA"
     access_token_secret="xUqFFO3LFroFjgO5XVAW1MYkYQhHoxmyLzMAwtHFh8Do1"
+
+else:
+    #Riccardo's key
+    consumer_token = 'wgyF8eM0142tmip6dwNFNR7gl'
+    consumer_secret = 'rGPAlNBF5nrSE6fofq23Bt5BwlBNpd1kLhjUofhEw2dMmoTv7V'
+
+    access_token="1000293863163129856-GoWCSNnKiOm03b4KgrSOdkgeUcJZ99"
+    access_token_secret="2QURVPydYfJfiF8u36ZS7NqfewT1QfgTfVZSSjWnQGH50"
 
 #auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 #auth.set_access_token(access_token, access_token_secret)
@@ -81,7 +89,7 @@ except tweepy.RateLimitError:
 directory=os.listdir("Tweets")
 i=0
 for i in range(0, len(directory)):
-    if i%3!=seed:   #this is not your folder, please continue
+    if i%4!=seed:   #this is not your folder, please continue
         continue
     dir=directory[i]
     listdir=os.listdir("Tweets/"+dir)
