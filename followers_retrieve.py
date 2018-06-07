@@ -25,12 +25,11 @@ access_token_secret=""
 
 if seed==0:
     # Emanuele's keys
-    consumer_key = 	"MNIY1db3L8UIWbWwcIufdbLsE"
-    consumer_secret = "EI9DxGIM7BoJOzNHUPjTn3kIPwK8OjNTWgLeWlb46wMg5gvFmE"
+    consumer_key = 	"tVyk6jPU4UPBnaGdHMCGvAY48"
+    consumer_secret = "QAEViQSW6xE5wRVHwJQP8asDnwXgCmWoN06WE6ep1hgKgIPciQ"
 
-    access_token = "455678422-G3uLg4O7ulLaZbyVhaSa2zPZamyHjC6eUClw0hUC"
-    access_token_secret = "gGTh7L7O5P7EhsKiqcESXqA9RXjiafNZOrc5MVXBEap4i"
-
+    access_token = "841341908957954051-PSaSB6RVihZgvCz0RIlYHr3T4ZGg21E"
+    access_token_secret = "VMIhfKGvVM9FRMrdq7L1Sy5xWHXid7NF7g7Mc1ZO8JxZi"
 elif seed==1:
     #Serena's keys
     consumer_key = 	"MNIY1db3L8UIWbWwcIufdbLsE"
