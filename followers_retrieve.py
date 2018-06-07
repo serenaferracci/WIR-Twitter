@@ -38,8 +38,21 @@ users = []
         print 'Getting page {} for friends'.format(page_count)
         users.extend(user)
 '''
+'''
+except tweepy.RateLimitError:
+    print("["+time.ctime()+"] Tweets limit reached, retry in 15 minutes...")
+    time.sleep(910)
+    print("["+time.ctime()+"] Retry now...")
+    continue;
+'''
 for dir in os.listdir("Tweets"):
-    for file in os.listdir("Tweets/" + dir):
+    listdir=os.listdir("Tweets/"+dir)
+    for file in listdir:
+        if (".txt" in file):
+            continue
+        if ((""+file + " - followers.txt") in listdir):
+            print("["+time.ctime()+"] Followers for user "+ file+" yet retrieved")
+            continue
         while True:
             try:
                 ids_fl = []
@@ -52,11 +65,11 @@ for dir in os.listdir("Tweets"):
                     out_fl.write(str(id) + "\n")
                 out_fl.close()
 
-                print("-------\n")
+                print("["+time.ctime()+"] Retrieved followers for user "+file)
                 break
-            except tweepy.RateLimitError:
-                print("["+time.ctime()+"] Tweets limit reached, retry in 15 minutes...")
-                time.sleep(910)
+            except tweepy.TweepError as e:
+                print("["+time.ctime()+"] "+e.reason);
+                time.sleep(300)
                 print("["+time.ctime()+"] Retry now...")
                 continue;
     print("["+time.ctime()+"] End of the process, collected friends and followers!")
