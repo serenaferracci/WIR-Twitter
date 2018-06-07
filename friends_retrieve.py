@@ -90,7 +90,7 @@ for i in range(0, len(directory)):
     for file in listdir:
         if (".txt" in file):
             continue
-        if ((""+file + " - followers.txt") in listdir):
+        if ((""+file + " - friends.txt") in listdir):
             print("["+time.ctime()+"] Friends for user "+ file+" yet retrieved")
             continue
         while True:
@@ -101,7 +101,7 @@ for i in range(0, len(directory)):
                 for page in tweepy.Cursor(api.friends_ids, id=file, count=5000).pages():
                     page_count += 1
                     ids_fl.extend(page)
-                out_fl = open("Tweets/" + dir + "/" + file + " - followers.txt", "w")
+                out_fl = open("Tweets/" + dir + "/" + file + " - friends.txt", "w")
                 for id in ids_fl:
                     out_fl.write(str(id) + "\n")
                 out_fl.close()
