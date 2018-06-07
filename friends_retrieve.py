@@ -46,7 +46,7 @@ elif seed==2:
     access_token="315710007-dTyuxZoGhBGFCMrarAqt27WaYuKNSBW2P5IZKtLA"
     access_token_secret="xUqFFO3LFroFjgO5XVAW1MYkYQhHoxmyLzMAwtHFh8Do1"
 
-elif seed=3:
+elif seed==3:
     #Riccardo's key
     consumer_key = 'wgyF8eM0142tmip6dwNFNR7gl'
     consumer_secret = 'rGPAlNBF5nrSE6fofq23Bt5BwlBNpd1kLhjUofhEw2dMmoTv7V'
