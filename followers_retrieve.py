@@ -4,7 +4,7 @@ import os
 import sys
 import time
 
-NUM_USERS=5;
+NUM_USERS=6;
 if (len(sys.argv)!=2):
     print("You have to specify an initial seed!")
     exit(1)
@@ -54,13 +54,21 @@ elif seed==3:
     access_token="1000293863163129856-GoWCSNnKiOm03b4KgrSOdkgeUcJZ99"
     access_token_secret="2QURVPydYfJfiF8u36ZS7NqfewT1QfgTfVZSSjWnQGH50"
 
-else:
+elif seed==4:
     #Ilaria's keys
     consumer_key="CCQuRUXXwmWtKLWLvZrME5Tu3"
     consumer_secret="RPoEEiEofMZxjfzywYUoIUT8NTs1WUN5IO6ZdqmMxmBAIEhTiM"
 
     access_token="792629040595214336-w4Zrb1V4rycmtgltYXro3vgkdIKb9Kt"
     access_token_secret="nK7ZyfZsq9gwBgVDomvg8bfrqHQx81FRqbPjsQvE94SDr"
+
+else:
+    #Matteo's keys
+    consumer_key="ETFCxxqm4tjN7xd5TIhXg2RIX"
+    consumer_secret="mNIUzH4FrsRJpIc2hiMKmRIhDnDIJfTBBbRtmIRPTPW2TkNnl8"
+
+    access_token="941832650-BHsUvRMpKh2f0e9OYCyjuGcgvZjt7j7HcCQZCsTR"
+    access_token_secret="oLrFrByYqUciVE7hFB9tffhtNQqrWhh0PxygFPD97ibbB"
 
 #auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 #auth.set_access_token(access_token, access_token_secret)
