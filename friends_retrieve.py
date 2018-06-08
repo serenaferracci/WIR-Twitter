@@ -115,17 +115,13 @@ for i in range(0, len(directory)):
         if ((""+file + " - friends.txt") in listdir):
             print("["+time.ctime()+"] Friends for user "+ file+" yet retrieved")
             continue
+        users=tweepy.Cursor(api.friends_ids, id=file, count=800000).items()
+        out_fl = open("Tweets/" + dir + "/" + file + " - friends.txt", "w")
         while True:
             try:
                 print("["+time.ctime()+"] Retrieving friends for user "+file)
-                ids_fl = []
-                page_count = 0
-                for page in tweepy.Cursor(api.friends_ids, id=file, count=800000).pages():
-                    page_count += 1
-                    ids_fl.extend(page)
-                out_fl = open("Tweets/" + dir + "/" + file + " - friends.txt", "w")
-                for id in ids_fl:
-                    out_fl.write(str(id) + "\n")
+                for user in users:
+                    out_fl.write(str(user) + "\n")
                 out_fl.close()
 
                 print("["+time.ctime()+"] Retrieved friends for user "+file)
@@ -137,7 +133,7 @@ for i in range(0, len(directory)):
                     millis=status["resources"]["friends"]["/friends/ids"]["reset"]-int(time.time())
                     if status["resources"]["friends"]["/friends/ids"]["remaining"]==0:
                         print("["+time.ctime()+"] Still missing "+str(millis)+ " seconds")
-                    time.sleep(300)
+                    time.sleep(millis+1)
                     print("["+time.ctime()+"] Retry now...")
                     continue;
                 break

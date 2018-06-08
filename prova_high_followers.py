@@ -102,45 +102,34 @@ except tweepy.RateLimitError:
     print("["+time.ctime()+"] Retry now...")
     continue;
 '''
-directory=os.listdir("Tweets")
-i=0
-for i in range(0, len(directory)):
-    if ".DS_Store" in directory[i]:
-        continue
-    if ".txt" in directory[i]:
-        continue
-    if i%NUM_USERS!=seed:   #this is not your folder, please continue
-        continue
-    dir=directory[i]
-    listdir=os.listdir("Tweets/"+dir)
-    for file in listdir:
-        if ".DS_Store" in file:
-            continue
-        if (".txt" in file):
-            continue
-        if ((""+file + " - followers.txt") in listdir):
-            print("["+time.ctime()+"] Followers for user "+ file+" yet retrieved")
-            continue
-        users=tweepy.Cursor(api.followers_ids, id=file, count=800000).items()
-        out_fl = open("Tweets/" + dir + "/" + file + " - followers.txt", "w")
-        while True:
-            try:
-                print("["+time.ctime()+"] Retrieving followers for user "+file)
-                for user in users:
-                    out_fl.write(str(user) + "\n")
-                out_fl.close()
+strange_user="6753242"
+users=tweepy.Cursor(api.followers_ids, id=strange_user, count=800000).items()
+while True:
+    try:
+        print("["+time.ctime()+"] Retrieving followers for user "+strange_user)
+        ids_fl = []
+        page_count = 0
+        for user in users:
+            page_count += 1
+            print(user)
+            ids_fl.append(user)
+        out_fl = open(strange_user + " - followers.txt", "w")
+        for id in ids_fl:
+            out_fl.write(str(id) + "\n")
+            print(str(id))
+        out_fl.close()
 
-                print("["+time.ctime()+"] Retrieved followers for user "+file)
-                break
-            except tweepy.TweepError as e:
-                print("["+time.ctime()+"] "+e.reason);
-                if("88" in e.reason):
-                    status=api.rate_limit_status()
-                    millis=status["resources"]["followers"]["/followers/ids"]["reset"]-int(time.time())
-                    if status["resources"]["followers"]["/followers/ids"]["remaining"]==0:
-                        print("["+time.ctime()+"] Still missing "+str(millis)+ " seconds")
-                    time.sleep(millis+1)
-                    print("["+time.ctime()+"] Retry now...")
-                    continue;
-                break
-    print("["+time.ctime()+"] End of the process, collected friends and followers!")
+        print("["+time.ctime()+"] Retrieved followers for user "+strange_user)
+        break
+    except tweepy.TweepError as e:
+        print("["+time.ctime()+"] "+e.reason);
+        if("88" in e.reason):
+            status=api.rate_limit_status()
+            millis=status["resources"]["followers"]["/followers/ids"]["reset"]-int(time.time())
+            if status["resources"]["followers"]["/followers/ids"]["remaining"]==0:
+                print("["+time.ctime()+"] Still missing "+str(millis)+ " seconds")
+            time.sleep(millis+1)
+            print("["+time.ctime()+"] Retry now...")
+            continue;
+        break
+print("["+time.ctime()+"] End of the process, collected friends and followers!")
