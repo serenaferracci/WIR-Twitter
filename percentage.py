@@ -5,6 +5,7 @@ tweets_folders=os.listdir(tweets)
 n_tweets=0
 n_followers=0
 n_friends=0
+n_completed=0
 
 for dir in tweets_folders:
     if (".txt" in dir):
@@ -23,9 +24,13 @@ for dir in tweets_folders:
             n_followers+=1
         if (""+file+" - friends.txt" in dir_files):
             n_friends+=1
+        if (""+file+" - followers.txt" in dir_files and ""+file+" - friends.txt" in dir_files):
+            n_completed+=1;
 
 print("Number of tweets: "+str(n_tweets))
 print("Number of followers: "+str(n_followers))
 print("Number of friends: "+str(n_friends))
 percentage=(n_followers+n_friends)/(2*n_tweets)
 print("Percentage: "+ str(percentage))
+percentage_completed=(n_completed)/(n_tweets)
+print("Percentage completed users: "+str(percentage_completed))
