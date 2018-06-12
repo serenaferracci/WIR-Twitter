@@ -139,7 +139,10 @@ for i in range(0, len(directory)):
                     millis=status["resources"]["followers"]["/followers/ids"]["reset"]-int(time.time())
                     if status["resources"]["followers"]["/followers/ids"]["remaining"]==0:
                         print("["+time.ctime()+"] Still missing "+str(millis)+ " seconds")
-                    time.sleep(millis+1)
+                    if millis<0:
+                    	time.sleep(300)
+                    else:
+                    	time.sleep(millis+1)
                     print("["+time.ctime()+"] Retry now...")
                     continue;
                 break
