@@ -134,7 +134,7 @@ for i in range(0, len(directory)):
                     if status["resources"]["friends"]["/friends/ids"]["remaining"]==0:
                         print("["+time.ctime()+"] Still missing "+str(millis)+ " seconds")
                     if (millis<0):
-                        time.sleep(300)
+                        time.sleep(60)
                     else:
                         time.sleep(millis+1)
                     print("["+time.ctime()+"] Retry now...")
