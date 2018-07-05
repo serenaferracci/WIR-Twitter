@@ -2,7 +2,7 @@ import networkx as nx
 import os
 
 G = nx.DiGraph();
-topic = "Movie"
+topic = "Health"
 
 for directory in os.listdir("Tweets"):
     if ("DS_Store" not in directory) and (".txt" not in directory) and (topic in directory):
