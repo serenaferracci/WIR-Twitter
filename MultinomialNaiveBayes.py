@@ -97,3 +97,34 @@ print(" Start Learning...")
 classifier = MultinomialNB().fit(X_train_tfidf, Y_train)
 print(" End Learning.")
 print("")
+
+
+
+X_test_counts = count_vect.transform(docs_test)
+X_test_tfidf = tfidf_transformer.transform(X_test_counts)
+print("")
+print("----------------------")
+print("Tf-idf Documents X Terms Matrix Representation of Test Set")
+print("Documents X Terms")
+print(X_test_tfidf.shape)
+print("----------------------")
+
+# Use the trained classifier to classify all documents in the Test-Set.
+Y_predicted = classifier.predict(X_test_tfidf)
+
+
+# Evaluate the performance of the classifiers.
+output_classification_report = metrics.classification_report(Y_test, Y_predicted, target_names=dataset.target_names)
+
+print("")
+print("----------------------------------------------------")
+print(output_classification_report)
+print("----------------------------------------------------")
+print("")
+
+# Compute the confusion matrix
+confusion_matrix = metrics.confusion_matrix(Y_test, Y_predicted)
+print("Confusion Matrix: True-Classes X Predicted-Classes")
+print(confusion_matrix)
+print("")
+print("")
