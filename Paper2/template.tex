@@ -1,0 +1,55 @@
+\documentclass[journal]{vgtc}  
+
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{times}
+
+\usepackage[bookmarks,backref=true,linkcolor=black]{hyperref} %,colorlinks
+\hypersetup{
+  pdfauthor = {},
+  pdftitle = {},
+  pdfsubject = {},
+  pdfkeywords = {},
+  colorlinks=true,
+  linkcolor= black,
+  citecolor= black,
+  pageanchor=true,
+  urlcolor = black,
+  plainpages = false,
+  linktocpage
+}
+
+\onlineid{0}
+
+
+\title{Twitter Trending Topic Classification}
+\author{MES: Maria Ludovica Costagliola - Emanuele De Santis - Serena Ferracci}
+
+%% Abstract section.
+\abstract{The Web Information Retrieval course allowed us to develope the described project.
+It is about classification of topics that are trending of twitter in a given moment. We have dealt 
+with (i) text based classification using single tweets (ii) network based classification exploting the 
+graph stracture of Twitter. 
+
+The used dataset is composed by tweets divided by trending topics. 
+We classify the trending topics into 8 categories: \textit{Event, Health, Movie, Music, Politics, Science, Society} and \textit{Sport}.
+
+The first approach gives good result in terms of precision and recall. Instead, the second approach 
+does not give conclusive results because it require too many resources to be implemented on a single machine.
+
+} 
+
+
+\begin{document}
+
+\firstsection{Introduction}
+
+\maketitle
+
+
+
+\bibliographystyle{abbrv}
+%%use following if all content of bibtex file should be shown
+%\nocite{*}
+\bibliography{template}
+\end{document}
