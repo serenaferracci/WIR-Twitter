@@ -2,9 +2,10 @@ import networkx as nx
 import os
 
 G = nx.DiGraph();
+topic = "Health"
 
 for directory in os.listdir("Tweets"):
-    if ("DS_Store" not in directory) and (".txt" not in directory) and ("Movie" in directory):
+    if ("DS_Store" not in directory) and (".txt" not in directory) and (topic in directory):
         for file in os.listdir("Tweets/"+directory):
             if ("DS_Store" not in file) and ("followers.txt" not in file) and ("friends.txt" not in file):
                 if file not in G:
@@ -25,4 +26,4 @@ for directory in os.listdir("Tweets"):
                 followers_file.close();
 
 pagerank = nx.pagerank(G);
-print(max(pagerank));
+print("Twitter ID of pagerank over "+topic+": "+str(max(pagerank)))
