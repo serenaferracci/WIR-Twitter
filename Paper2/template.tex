@@ -3,6 +3,8 @@
 \usepackage{mathptmx}
 \usepackage{graphicx}
 \usepackage{times}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{arg\,max}
 
 \usepackage[bookmarks,backref=true,linkcolor=black]{hyperref} %,colorlinks
 \hypersetup{
@@ -97,7 +99,7 @@ mapping was done using a simple hash function.
 We saved the list of followers and the list of friends for an user $x$ in the files named \texttt{x - followers.txt}
 and \texttt{x - friends.txt}. These two files are saved in the same folder that contains the tweet tweeted by $x$.
 
-We have to deal with several problems to retrieve the dataset:
+We faced three main problems to retrieve the dataset:
 \begin{itemize}
   \item some users changed their privacy settings between the first and the second phase
   of our retrieving. For this reason we couldn't get neither their followers nor their friends.
@@ -106,9 +108,44 @@ We have to deal with several problems to retrieve the dataset:
   entire day at full capacity.
   It also happened that the execution stopped due to connection problems or other unpredictable events, 
   so it was not possible to retrieve the entire list of IDs.
-  
+  \item there wasn't a retrievable ground-truth for the trending topics we collected.
 \end{itemize}
 
+The last problem was the only one that we could manage to solve. 
+
+We tried to automatically get a classification using some pretrained machine learning algorithms, but when we 
+manually checked the classification done we saw that almost all the predictions was wrong.
+
+The solution, that we came up with,was to label every trending topic by hand. 
+We took one directory at a time, we read some tweets to understand what the topic was about, 
+we assigned to the directory a single category among the 8 defined.
+
+
+
+\section{Classification using Naive Bayes}
+Multinomial Naive Bayes is a very useful Machine Learning algorithm when we are dealing with
+text classification. 
+Naive Bayes is based on the assumption that the probability that a document (composed of terms $(t_1,...,t_T)$) belongs to a class $c_k$
+, namely $P(c_k | t_1, ..., t_T) $, can be written as $P(c_k) \cdot \prod\limits_{i=1}^{T}P(t_i)$.
+The the probability that a term is in a class is conditionally independent from the probability that 
+ another term is in the same class.
+
+ So Naive Bayes classifier makes a prediction $\hat{y}$ using the following formula
+
+\begin{center}
+$\hat{y} = \argmax\limits_{k \in \{1, ..., K \}} P(c_k) \cdot \prod\limits_{i = 1}^{T} P(t_i | c_k)$
+\end{center}
+
+We rearranged the data in the dataset in order to have a folder that contains 8 subfolders (one for each
+category we considered). Each one contains all the tweets belonging to a trending topic that belongs to the category of the subfolder.
+This operation is done by \texttt{training\_set.py} python script.
+
+We developed also \texttt{naive\_bayes.py}. It takes as dataset the folder yet mentioned.
+
+\texttt{sklearn} allows to make an automatic division of the dataset, splitting it into train set and
+test set (25\% for the test set).
+Applied a vectorization combined with stemming\_tokenization, we trained the Multinomial Naive Bayes classifier.
+We, then, evaluate it using the test set and we get the following results:
 
 \bibliographystyle{abbrv}
 %%use following if all content of bibtex file should be shown
