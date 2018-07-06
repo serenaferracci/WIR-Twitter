@@ -3,44 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: template.aux
 The style file: abbrv.bst
 Database file #1: template.bib
-You've used 1 entry,
+Warning--to sort, need author or key in twitter
+Warning--to sort, need author or key in api
+You've used 3 entries,
             2118 wiz_defined-function locations,
-            501 strings with 3987 characters,
-and the built_in function-call counts, 384 in all, are:
-= -- 31
-> -- 33
+            509 strings with 4234 characters,
+and the built_in function-call counts, 702 in all, are:
+= -- 61
+> -- 35
 < -- 0
-+ -- 13
++ -- 15
 - -- 12
-* -- 31
-:= -- 78
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 9
+* -- 41
+:= -- 112
+add.period$ -- 7
+call.type$ -- 3
+change.case$ -- 15
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 10
-empty$ -- 18
+cite$ -- 5
+duplicate$ -- 24
+empty$ -- 64
 format.name$ -- 12
-if$ -- 69
+if$ -- 149
 int.to.chr$ -- 0
-int.to.str$ -- 1
+int.to.str$ -- 3
 missing$ -- 1
-newline$ -- 8
+newline$ -- 16
 num.names$ -- 2
-pop$ -- 9
+pop$ -- 25
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 12
 quote$ -- 0
-skip$ -- 7
+skip$ -- 23
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 15
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
-warning$ -- 0
+type$ -- 12
+warning$ -- 2
 while$ -- 2
-width$ -- 2
-write$ -- 12
+width$ -- 4
+write$ -- 26
+(There were 2 warnings)
