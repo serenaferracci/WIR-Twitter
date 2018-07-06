@@ -1,4 +1,4 @@
-\documentclass[journal]{vgtc}  
+\documentclass[journal,11pt]{vgtc}  
 
 \usepackage{mathptmx}
 \usepackage{graphicx}
@@ -26,25 +26,44 @@
 \author{MES: Maria Ludovica Costagliola - Emanuele De Santis - Serena Ferracci}
 
 %% Abstract section.
-\abstract{The Web Information Retrieval course allowed us to develope the described project.
-It is about classification of topics that are trending of twitter in a given moment. We have dealt 
-with (i) text based classification using single tweets (ii) network based classification exploting the 
-graph stracture of Twitter. 
+\abstract{
+  \normalsize
+  The Web Information Retrieval course allowed us to develope the described project.
+  It is about classification of topics that are trending of twitter in a given moment. We have dealt 
+  with (i) text based classification using single tweets (ii) network based classification exploiting the 
+  graph structure of Twitter. 
 
-The used dataset is composed by tweets divided by trending topics. 
-We classify the trending topics into 8 categories: \textit{Event, Health, Movie, Music, Politics, Science, Society} and \textit{Sport}.
+  The used dataset is composed by tweets divided by trending topics. 
+  We classify the trending topics into 8 categories: \textit{Event, Health, Movie, Music, Politics, Science, Society} and \textit{Sport}.
 
-The first approach gives good result in terms of precision and recall. Instead, the second approach 
-does not give conclusive results because it require too many resources to be implemented on a single machine.
+  The first approach gives good result in terms of precision and recall. Instead, the second approach 
+  does not give conclusive results because it require too many resources to be implemented on a single machine.
 
 } 
 
 
 \begin{document}
 
-\firstsection{Introduction}
 
 \maketitle
+
+\section{Introduction}
+We chose this project because Twitter is one of the most popular social network. 
+It is used every day by millions of users expressing their opinions about several fields.
+When an user looks for something, the first thing Twitter displays to him is the list of 
+trending topics of the moment. Often the user can not know what the topic is about, so it as to manually 
+search for tweets belonging to that trending topic to better understand it.
+
+It is interesting for the user to have a way to know what the Trending Topic is about
+without further searches.
+Our work tries to replicate the results obtained by \cite{lee_palsetia_narayanan_patwary_agrawal_choudhary_2011}.  
+The general categories used in this project are 8, named: \textit{Event, Health, Movie, Music, Politics, Science, Society} and \textit{Sport}.
+
+
+\section{Related Work}
+The paper we refer to is the work done by Lee et al. for tweets classification \cite{lee_palsetia_narayanan_patwary_agrawal_choudhary_2011}. 
+They have used 18 general categories to classify each trending topic.
+They address the problem following two different approaches 
 
 
 

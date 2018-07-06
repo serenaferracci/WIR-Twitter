@@ -600,7 +600,7 @@
        \leftskip = 0.33in \rightskip = \leftskip%
        \ifx\vgtc@abstxt\vgtc@empty \else%
             \begingroup%
-                {\bfseries Abstract}---\vgtc@abstxt%
+                {\bfseries \normalsize Abstract}---\vgtc@abstxt%
             \endgroup\par%
         \fi%
         \ifx\vgtc@keywords\vgtc@empty \else%
