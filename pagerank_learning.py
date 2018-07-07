@@ -5,7 +5,6 @@ input_folder="training_set"
 
 topics=["Health","Science","Movie","Music","Sport","Society","Event","Politics"]
 
-
 for topic in topics:
     G = nx.DiGraph();
     for directory in os.listdir("pagerank_training"):
