@@ -3,9 +3,7 @@ import os
 
 input_folder="training_set"
 
-topics=["Health","Science","Movie","Music","Sport","Society","Event","Politics"]
-
-for topic in topics:
+for topic in os.listdir(input_folder):
     G = nx.DiGraph();
     for directory in os.listdir("pagerank_training"):
         if ("DS_Store" not in directory) and (".txt" not in directory) and (" - "+topic in directory):
