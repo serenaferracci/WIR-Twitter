@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  7 JUL 2018 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  7 JUL 2018 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -435,66 +435,70 @@ Package pdftex.def Info: diamondrule-eps-converted-to.pdf used on input line 51
 (pdftex.def)             Requested size: 213.79822pt x 12.04495pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <10.95> not available
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 52.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 78.
+
+<screen-example.png, id=29, 382.42876pt x 426.59375pt>
+File: screen-example.png Graphic file (type png)
+
+<use screen-example.png>
+Package pdftex.def Info: screen-example.png used on input line 61.
+(pdftex.def)             Requested size: 152.96878pt x 170.63446pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 83.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./diamondrule-eps-converted-to.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 104.
+ <./diamondrule-eps-converted-to.pdf> <./screen-example.png>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 109.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
 
-Overfull \hbox (14.64468pt too wide) in paragraph at lines 142--143
+Overfull \hbox (14.64468pt too wide) in paragraph at lines 147--148
 []\OT1/ptm/m/n/10.95 We de-vel-oped also \OT1/pcr/m/n/10.95 naive[]bayes[]no[]s
 temmming.py\OT1/ptm/m/n/10.95 .
  []
 
-<naive_bayes_no_stemming.png, id=49, 335.00156pt x 321.45094pt>
+<naive_bayes_no_stemming.png, id=52, 335.00156pt x 321.45094pt>
 File: naive_bayes_no_stemming.png Graphic file (type png)
 
 <use naive_bayes_no_stemming.png>
-Package pdftex.def Info: naive_bayes_no_stemming.png used on input line 155.
+Package pdftex.def Info: naive_bayes_no_stemming.png used on input line 160.
 (pdftex.def)             Requested size: 167.50037pt x 160.72507pt.
 
-Underfull \hbox (badness 2582) in paragraph at lines 160--163
+Underfull \hbox (badness 2582) in paragraph at lines 165--168
 []\OT1/ptm/m/n/10.95 We tried, also, an-other ver-sion of the pro-gram,
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 160--163
+Underfull \hbox (badness 1953) in paragraph at lines 165--168
 \OT1/pcr/m/n/10.95 naive[]bayes[]stemming.py\OT1/ptm/m/n/10.95 , where we used 
 the
  []
 
-<naive_bayes_stemming.png, id=52, 368.87813pt x 318.43968pt>
+[2 <./naive_bayes_no_stemming.png>]
+<naive_bayes_stemming.png, id=64, 368.87813pt x 318.43968pt>
 File: naive_bayes_stemming.png Graphic file (type png)
 
 <use naive_bayes_stemming.png>
-Package pdftex.def Info: naive_bayes_stemming.png used on input line 166.
+Package pdftex.def Info: naive_bayes_stemming.png used on input line 171.
 (pdftex.def)             Requested size: 184.4386pt x 159.21945pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2 <./naive_bayes_no_stemming.png>] (./template.bbl
+ [3 <./naive_bayes_stemming.png>] (./template.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 
@@ -502,27 +506,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--11
 \OT1/pcr/m/n/8 twitter . com / en / docs / tweets / search / api-[]reference /
  []
 
-[3 <./naive_bayes_stemming.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 241.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 259.
  [4
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 241.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 259.
  (./template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 241.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 241.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 259.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 259.
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: 81EEE93549BAFE56672794F750863B00;308.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 241.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 259.
  ) 
 Here is how much of TeX's memory you used:
- 6148 strings out of 492995
- 90518 string characters out of 6132703
+ 6153 strings out of 492995
+ 90627 string characters out of 6132703
  182479 words of memory out of 5000000
- 9580 multiletter control sequences out of 15000+600000
+ 9584 multiletter control sequences out of 15000+600000
  47876 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,28p,647b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,8n,28p,647b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
@@ -534,10 +538,10 @@ ts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
 e1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on template.pdf (4 pages, 125718 bytes).
+Output written on template.pdf (4 pages, 340796 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  18 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

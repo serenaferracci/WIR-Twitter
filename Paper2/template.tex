@@ -56,6 +56,11 @@ When an user looks for something, the first thing Twitter displays to him is the
 trending topics of the moment. Often the user can not know what the topic is about, so it has to manually
 search for tweets belonging to that trending topic to better understand it.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4]{screen-example}
+ \end{figure}
+
 It is interesting for the user to have a way to know what the Trending Topic is about
 without further searches.
 Our work tries to replicate the results obtained by \cite{lee_palsetia_narayanan_patwary_agrawal_choudhary_2011}.
@@ -170,7 +175,6 @@ Making the vectorization phase together with stemming, we get the results shown 
 
 As we can see from \ref{no-stemming} and \ref{stemming}, we get lower results using stemming technique. Usually, stemming reduces the size of the particular vocabulary in order to increase performances of the classifier. In our case, this didn't happen since our tweets are written not only in English, but also in Spanish. So, it's not possible to apply this preprocessing technique since it bases its computation according to the language of the target vocabulary, that must be unique.
 
-\newpage
 \section{Network Based Classification}
 For this second approach, we exploited the structure of the social network. We assumed that if there is a significant overlap among users
 generating tweets on two topics, then it implies a close relationship between these two topics.
@@ -182,8 +186,19 @@ subset of the Twitter's network.
 In the directed graph every node represents an user and every edge represents a relationship between two users.
 If a node has an incoming edge, meaning it is followed by another node, we call the last one follower. Instead, if a node has an
 outgoing edge, meaning that it follows another node, we call the last one friend.
-To construct the described graph, we developed the python file \texttt{pagerank\_learning.py}, in which we used the predefined library \texttt{NetworkX}. The library offers to the programmer
-several functions that facilitate the construction of the graph.
+
+The original idea to perform the network based classification was to construct a single graph for all the dataset, putting 
+together all the users, and their friends and followers, of every category.
+Once the graph is obtained, a personalized PageRank for each defined category is computed. 
+The purpose of this operation was to find the top-k influencers for each category. 
+An influencer is a user that obtain an high PageRank score, since PageRank is a way of measuring the importance of website pages.
+We could not put this idea into practice because the graph reached a dimension that was too high 
+to be managed by a single machine. 
+To mitigate the problem, we decide to split the graph in as many components as the number of categories.
+
+To construct the described graphs, we developed the python file \texttt{pagerank\_learning.py}, 
+in which we used the predefined library \texttt{NetworkX}. 
+The library offers to the programmer several functions that facilitate the construction of the graph.
 Once the graph is finalized, we compute the PageRank using a function present in the mentioned library.
 This function takes as parameter only the graph defined as describe above and returns a dictionary of nodes
 with the PageRank as value.
@@ -208,7 +223,10 @@ a tweet about the analyzed category.
 Once we had completed all the intersection, we order in descending order the categories according to the
 value obtained with the intersection. The category with the highest value it is the category
 to which the new topic is assigned.
-By performing what it has just been described, we have obtained the following results:
+
+It was not possible to obtain practical results, even after having applied the above modifications 
+to the original idea, because the memory of a single machine was not sufficient to keep the graph 
+resized and apply the PageRank.
 
 \section{Results}
 In this project, we used two different classification approaches for Twitter trending topic classification.
