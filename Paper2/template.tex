@@ -160,7 +160,7 @@ to the test set and we made the algorithm predict these instances. We get at the
 We tried, also, another version of the program, \texttt{naive\_bayes\_stemming.py}, where we used the stemming technique:
 we tokenized each word, applying an \texttt{EnglishStemmer} from \texttt{nltk} \cite{nltk}.
 Making the vectorization phase together with stemming, we get the results shown in \ref{stemming}.
-
+ 
 \begin{figure}[h]
  \centering
  \includegraphics[scale=0.5]{naive_bayes_stemming}
@@ -209,6 +209,29 @@ Once we had completed all the intersection, we order in descending order the cat
 value obtained with the intersection. The category with the highest value it is the category
 to which the new topic is assigned.
 By performing what it has just been described, we have obtained the following results:
+
+\section{Results}
+In this project, we used two different classification approaches for Twitter trending topic classification.
+We used text-based classification and we tried to exploit the social network structure rather than 
+using just textual information, which can lead to incorrect result due to the limit on the number of characters 
+that users are allowed to use for their messages and the use of Twitter slang.
+
+Analyzing the Naive Bayes approach, our results show that Naive Bayes without stemming 
+performed better than Naive Bayes with stemming on our dataset. Considering retrieved tweets are not 
+written only in English or in some cases using the regular English (the users use particular slangs or abbreviations),
+Naive Bayes using stemming provides worst results.
+
+Instead, analyzing the network based classification, we were able to obtain only theoretical results. 
+This problem is not due to errors in the proposed solution, which has been tested on a smaller dataset, 
+but to the lack of memory available on a single machine. 
+The original idea was to construct a single graph for all the dataset and then compute a personalized
+PageRank for each defined category to find the top-k influencers. To mitigate the memory problem, we decided
+to build a graph for each category and then compute the PageRank on these ones.
+Unfortunately, the graphs were still too large to make a single machine calculate the PageRank.
+
+
+
+
 
 
 \bibliographystyle{abbrv}

@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{nltk}
+Nltk 3.3 documentation.
+\newblock \url{https://www.nltk.org/#}.
+
+\bibitem{twitter}
+Standard search api - twitter developers.
+\newblock
+  \url{https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets}.
+
+\bibitem{api}
+Tweepy documentation.
+\newblock \url{http://docs.tweepy.org/en/v3.5.0/}.
+
+\bibitem{lee_palsetia_narayanan_patwary_agrawal_choudhary_2011}
+K.~Lee, D.~Palsetia, R.~Narayanan, M.~M.~A. Patwary, A.~Agrawal, and
+  A.~Choudhary.
+\newblock Twitter trending topic classification.
+\newblock {\em 2011 IEEE 11th International Conference on Data Mining
+  Workshops}, 2011.
+
+\end{thebibliography}
