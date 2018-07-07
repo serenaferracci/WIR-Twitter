@@ -166,7 +166,10 @@ Making the vectorization phase together with stemming, we get:
 \end{figure}
 
 \section{Network Based Classification}
-For this approach we exploited the structure of the social network.
+For this approach we exploited the structure of the social network. We assumed that if there is significant overlap among users 
+generating tweets on two topics, then it implies a close relationship between the topics.
+Network-based data modeling uses the categories that are manually labeled in the previous approach to predict
+the category of a new trending topic.
 To compute the network based classification, we first had to construct the direct graph, that represents a small 
 subset of the Twitter's network. 
 In the direct graph every node represents an user and every edge represents a relationship between two users.
@@ -196,6 +199,7 @@ Once we had completed all the intersection, we order in descending order the cat
 value obtained with the intersection. The category with the highest value, it is the category
 to which the new topic is assigned.
 By performing what has just been described, we have obtained the following results:
+
 
 \bibliographystyle{abbrv}
 %%use following if all content of bibtex file should be shown

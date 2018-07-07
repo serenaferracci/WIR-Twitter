@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  7 JUL 2018 15:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  7 JUL 2018 15:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -498,28 +498,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 8--11
 \OT1/pcr/m/n/8 twitter . com / en / docs / tweets / search / api-[]reference /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
  [3 <./naive_bayes_stemming.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 204.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
  (./template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: DA4762E3823CC80358F2B99C03FF53A1;266.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
  ) 
 Here is how much of TeX's memory you used:
  6143 strings out of 492995
  90469 string characters out of 6132703
- 186321 words of memory out of 5000000
+ 187321 words of memory out of 5000000
  9577 multiletter control sequences out of 15000+600000
  47876 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -535,7 +532,7 @@ ts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
 e1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on template.pdf (3 pages, 122909 bytes).
+Output written on template.pdf (3 pages, 123249 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream
