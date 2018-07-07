@@ -3,14 +3,10 @@ import numpy as np
 from sklearn.datasets import load_files
 from sklearn.model_selection import train_test_split
 
-from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from sklearn.naive_bayes import MultinomialNB
-# Try to import a kNN classifier ;)
-from sklearn.neighbors import KNeighborsClassifier
 
-from sklearn.pipeline import Pipeline
 
 from sklearn import metrics
 
@@ -63,19 +59,11 @@ print(Y_test.shape)
 print("----------------------")
 
 # Conversion of the Training Set
-#count_vect = CountVectorizer("")
+
 
 vectorizer = TfidfVectorizer(strip_accents= None, preprocessor = None, tokenizer=stemming_tokenizer)
 
-#X_train_counts = count_vect.fit_transform(docs_train)
-#print("")
-#print("----------------------")
-#print("Training Set conversion:")
-#print("")
-#print("NumOccurrences Documents X Terms Matrix Representation of Training Set")
-#print(X_train_counts.shape)
-#print("")
-#tfidf_transformer = TfidfTransformer("")
+
 X_train_tfidf = vectorizer.fit_transform(docs_train)
 print("")
 print("Tf-idf Documents X Terms Matrix Representation of Training Set")
@@ -88,14 +76,12 @@ print("")
 print("")
 print(" Start Learning...")
 classifier = MultinomialNB().fit(X_train_tfidf, Y_train)
-#classifier= KNeighborsClassifier(n_neighbors=25, weights="distance").fit(X_train_tfidf, Y_train)
 print(" End Learning.")
 print("")
 
 ### Classifier Evaluation
 
 # Conversion of the Test Set in a Tf-idf format
-#X_test_counts = count_vect.transform(docs_test)
 X_test_tfidf = vectorizer.transform(docs_test)
 print("")
 print("----------------------")
