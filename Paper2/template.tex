@@ -124,7 +124,7 @@ we assigned to the directory a single category among the 8 defined.
 Multinomial Naive Bayes is a very useful Machine Learning algorithm when we are dealing with
 text classification. 
 Naive Bayes is based on the assumption that the probability that a document (composed of terms $(t_1,...,t_T)$) belongs to a class $c_k$
-, namely $P(c_k | t_1, ..., t_T) $, can be written as $P(c_k) \cdot \prod\limits_{i=1}^{T}P(t_i)$.
+, namely $P(c_k | t_1, ..., t_T) $, can be written as $P(c_k) \cdot \prod\limits_{i=1}^{T}P(t_i|c_k)$.
 The probability that a term is in a class is conditionally independent from the probability that 
  another term is in the same class.
 
@@ -173,7 +173,7 @@ As we can see from \ref{no-stemming} and \ref{stemming}, we get lower results us
 \section{Network Based Classification}
 For this second approach, we exploited the structure of the social network. We assumed that if there is a significant overlap among users 
 generating tweets on two topics, then it implies a close relationship between these two topics.
-Network-based data modeling uses the categories that are manually labeled in the previous approach to predict
+network based data modeling uses the categories that are manually labeled in the previous approach to predict
 the category of a new trending topic.
 
 To compute the network based classification, we first had to construct the directed graph, that represents a small 

@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex template"] 1530967648 "template.aux" "template.bbl" "template" 1530969022
+["bibtex template"] 1530971956 "template.aux" "template.bbl" "template" 1530971957
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/base/abbrv.bst" 1480098433 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "template.aux" 1530969022 1745 7628176705e6206c967d83d9ebe8b7d8 ""
+  "template.aux" 1530971957 1946 073e2ea96b64a36ee7cc9d49094a30e7 ""
   "template.bib" 1530967184 871 2fed5311573929085ac7161d45d71be2 ""
   (generated)
   "template.blg"
   "template.bbl"
-["pdflatex"] 1530969021 "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" "template.pdf" "template" 1530969022
-  "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" 1530969021 11980 c3804ab8df7ce04b3792658940712326 ""
+["pdflatex"] 1530971957 "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" "template.pdf" "template" 1530971957
+  "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" 1530971956 12585 9746f118efea1b898c55b27586b2de54 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1480098688 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -107,13 +107,13 @@
   "diamondrule.eps" 1530865500 1628 0665bc6ab15b0461d58d4980933d48e7 ""
   "naive_bayes_no_stemming.png" 1530967184 13429 cbbb2e1abab7347a0f9bd03b1a1b3770 ""
   "naive_bayes_stemming.png" 1530967184 14758 5d733936ddb45035919ec1f666b93a9c ""
-  "template.aux" 1530969022 1745 7628176705e6206c967d83d9ebe8b7d8 ""
-  "template.bbl" 1530967649 671 be8f379d7b11f25d9b1bbadf04ced0d5 "bibtex template"
-  "template.out" 1530969022 266 da4762e3823cc80358f2b99c03ff53a1 ""
-  "template.tex" 1530969021 11980 c3804ab8df7ce04b3792658940712326 ""
+  "template.aux" 1530971957 1946 073e2ea96b64a36ee7cc9d49094a30e7 ""
+  "template.bbl" 1530971957 671 be8f379d7b11f25d9b1bbadf04ced0d5 "bibtex template"
+  "template.out" 1530971957 266 da4762e3823cc80358f2b99c03ff53a1 ""
+  "template.tex" 1530971956 12585 9746f118efea1b898c55b27586b2de54 ""
   "vgtc.cls" 1530881401 26839 6aea5d95a2b64b716c5d2eedb201aab9 ""
   (generated)
-  "template.aux"
-  "template.pdf"
   "template.out"
+  "template.pdf"
   "template.log"
+  "template.aux"
