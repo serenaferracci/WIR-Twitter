@@ -127,7 +127,7 @@ Multinomial Naive Bayes is a very useful Machine Learning algorithm when we are 
 text classification. 
 Naive Bayes is based on the assumption that the probability that a document (composed of terms $(t_1,...,t_T)$) belongs to a class $c_k$
 , namely $P(c_k | t_1, ..., t_T) $, can be written as $P(c_k) \cdot \prod\limits_{i=1}^{T}P(t_i)$.
-The the probability that a term is in a class is conditionally independent from the probability that 
+The probability that a term is in a class is conditionally independent from the probability that 
  another term is in the same class.
 
  So Naive Bayes classifier makes a prediction $\hat{y}$ using the following formula
@@ -146,6 +146,9 @@ We developed also \texttt{naive\_bayes.py}. It takes as dataset the folder yet m
 test set (25\% for the test set).
 Applied a vectorization combined with stemming\_tokenization, we trained the Multinomial Naive Bayes classifier.
 We, then, evaluate it using the test set and we get the following results:
+
+
+\section{Network Based Classification}
 
 \bibliographystyle{abbrv}
 %%use following if all content of bibtex file should be shown
