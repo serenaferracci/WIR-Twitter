@@ -14,12 +14,9 @@ from nltk.corpus import stopwords
 from nltk.stem.snowball import EnglishStemmer
 from nltk import word_tokenize
 
-
 ######################################################################
 ######################################################################
 ######################################################################
-
-
 
 stemmer = EnglishStemmer()
 
