@@ -7,8 +7,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from sklearn.naive_bayes import MultinomialNB
-# Try to import a kNN classifier ;)
-from sklearn.neighbors import KNeighborsClassifier
 
 from sklearn.pipeline import Pipeline
 
@@ -18,12 +16,9 @@ from nltk.corpus import stopwords
 from nltk.stem.snowball import EnglishStemmer
 from nltk import word_tokenize
 
-
 ######################################################################
 ######################################################################
 ######################################################################
-
-
 
 stemmer = EnglishStemmer()
 
