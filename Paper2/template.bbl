@@ -1,5 +1,9 @@
 \begin{thebibliography}{1}
 
+\bibitem{nltk}
+Nltk 3.3 documentation.
+\newblock \url{https://www.nltk.org/#}.
+
 \bibitem{twitter}
 Standard search api - twitter developers.
 \newblock

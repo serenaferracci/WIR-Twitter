@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex template"] 1530953919 "template.aux" "template.bbl" "template" 1530958867
+["bibtex template"] 1530967648 "template.aux" "template.bbl" "template" 1530968756
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/base/abbrv.bst" 1480098433 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "template.aux" 1530958866 1423 1de13043f5b59775928b7a6ac84aa9c2 ""
-  "template.bib" 1530885170 741 47783011b9d3111f83e4f026087398b4 ""
+  "template.aux" 1530968756 1745 7628176705e6206c967d83d9ebe8b7d8 ""
+  "template.bib" 1530967184 871 2fed5311573929085ac7161d45d71be2 ""
   (generated)
-  "template.bbl"
   "template.blg"
-["pdflatex"] 1530958866 "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" "template.pdf" "template" 1530958867
-  "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" 1530958866 9128 5498d58033fe1f7f1eac7cd48e235f00 ""
+  "template.bbl"
+["pdflatex"] 1530968755 "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" "template.pdf" "template" 1530968756
+  "/Users/serenaferracci/Documents/Università/Magistrale/I anno/II semestre/Web Information Retreival/MES/WIR-Twitter/Paper2/template.tex" 1530968755 11680 ae015b185fb7f3014cb18d5c0eb0288b ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1480098688 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -105,13 +105,15 @@
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1511471193 4129593 3e756a26a572ecfc625f911d1ef1bf0f ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "diamondrule.eps" 1530865500 1628 0665bc6ab15b0461d58d4980933d48e7 ""
-  "template.aux" 1530958866 1423 1de13043f5b59775928b7a6ac84aa9c2 ""
-  "template.bbl" 1530953919 591 03443aed7431a09140c2701e39d9d349 "bibtex template"
-  "template.out" 1530958866 266 da4762e3823cc80358f2b99c03ff53a1 ""
-  "template.tex" 1530958866 9128 5498d58033fe1f7f1eac7cd48e235f00 ""
+  "naive_bayes_no_stemming.png" 1530967184 13429 cbbb2e1abab7347a0f9bd03b1a1b3770 ""
+  "naive_bayes_stemming.png" 1530967184 14758 5d733936ddb45035919ec1f666b93a9c ""
+  "template.aux" 1530968756 1745 7628176705e6206c967d83d9ebe8b7d8 ""
+  "template.bbl" 1530967649 671 be8f379d7b11f25d9b1bbadf04ced0d5 "bibtex template"
+  "template.out" 1530968756 266 da4762e3823cc80358f2b99c03ff53a1 ""
+  "template.tex" 1530968755 11680 ae015b185fb7f3014cb18d5c0eb0288b ""
   "vgtc.cls" 1530881401 26839 6aea5d95a2b64b716c5d2eedb201aab9 ""
   (generated)
   "template.log"
+  "template.pdf"
   "template.aux"
   "template.out"
-  "template.pdf"

@@ -166,18 +166,36 @@ Making the vectorization phase together with stemming, we get:
 \end{figure}
 
 \section{Network Based Classification}
+For this approach we exploited the structure of the social network.
 To compute the network based classification, we first had to construct the direct graph, that represents a small 
 subset of the Twitter's network. 
 In the direct graph every node represents an user and every edge represents a relationship between two users.
 If a node has an incoming edge, meaning it is followed by another node, we call the last one follower. Instead, if a node has an 
 outgoing edge, meaning that it follows another node, we call the last one friend.
-To construct the described graph, we developed the python file \texttt{pagerank.py}, in which we used the predefined library \texttt{NetworkX}. The library offers to the programmer 
+To construct the described graph, we developed the python file \texttt{pagerank\_learning.py}, in which we used the predefined library \texttt{NetworkX}. The library offers to the programmer 
 several functions that facilitate the construction of the graph. 
 Once the graph is finalized, we compute the PageRank using a function present in the mentioned library. 
 This function takes as parameter only the graph defined as describe above and returns a dictionary of nodes 
 with the PageRank as value. 
 The purpose of this computation is to find the top-k influencers for each category. The top influencers
 are the ones that have the higher PageRank value.
+For every category the program is run independently from the other executions. Each time we save in a 
+distinct file the top-k influencers of the category. The name of the file is 
+\texttt{topk.txt} and it is placed in the subfolder of that particular category in the training set folder.
+After the retrieve of the influencers fro each category, the training is complete. 
+In order to perform the classification of a new trending topic, we proceeded as follows. 
+We had to construct a distinct direct graph also for the new topic. The procedure is the same as that performed
+to build the other direct graphs. Once the graph was complete, we executed the PageRank on it. 
+As result we had the top-k influencers of this particular trending topic. 
+At this point, we took the influencers computed in the training phase and the influencers computed in the
+last phase and we started to compute the intersection between the top-k influencers of the new topic and 
+all the other sets of influencers. 
+The result of the intersection will be the number of users that wrote a tweet about the new topic and, also, 
+a tweet about the analyzed category. 
+Once we had completed all the intersection, we order in descending order the categories according to the 
+value obtained with the intersection. The category with the highest value, it is the category
+to which the new topic is assigned.
+By performing what has just been described, we have obtained the following results:
 
 \bibliographystyle{abbrv}
 %%use following if all content of bibtex file should be shown
