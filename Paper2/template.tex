@@ -193,12 +193,16 @@ Together with this file we have the list of the followers and of the friends of 
 So we first add the user ID in the graph, then we read these two additional files to add all the friends and followers IDs and to
 create the corresponding edges.
 
-The original idea to perform the network based classification was to construct a single graph for all the dataset, putting
+The original idea to perform the network based classification was to construct a single big graph for all the dataset, putting
 together all the users, and their friends and followers, of every category.
-This graph represents our training, since it will be used to classify new trending topics.
-To classify new instances we have to add the new trending topic IDs (so all the ID of the users that wrotes a tweet in that
-trending topic together with all the followers and friends) to the graph and then compute Personalized PageRank with
-personalization vector $\hat{P}$ such that
+
+We first train the algorithm with a distinct graph for each category: we compute PageRank on these graphs to get
+the top-k influencers of each category, namely $C_t=\{i : i \in pr(k, c_t)\}$, where $pr(k, c_t)$ is the PageRank of
+top-k influencers run on the graph of category $c_t$.
+
+To classify new instances we have to add the new trending topic IDs (so all the IDs of the users that wrotes a tweet in that
+trending topic together with all the followers and friends) to the single big graph mentioned above and then compute
+Personalized PageRank with personalization vector $\hat{P}$ such that
 
 \bigskip
 
@@ -206,7 +210,7 @@ personalization vector $\hat{P}$ such that
 $
 \hat{P}_i=
 \begin{cases}
-  0, & \mbox{if } i \not\in \mbox{ new trending topic} \\
+  0, & \mbox{if } i \not\in \mbox{ new trending topic writers} \\
   1, & \mbox{otherwise }
 \end{cases}
 $
@@ -221,14 +225,14 @@ We define an importance score as:
 
 \begin{center}
 $
-S_{c_t}=\sum\limits_{i \in c_t} pr(k)_i
+S_{c_t}=\sum\limits_{i \in C_t} pr(k)_i
 $
 \end{center}
 
 \medskip
 
-where $c_t$ is the $t$-th class and $pr(k)$ is the PageRank vector composed only of the first $k$ influencers
-(users that had the highest PageRank score).
+where $C_t$ is the set of top-k influencers for class $t$ and $pr(k)$ is the PageRank vector composed
+only of the first $k$ influencers (users that had the highest PageRank score) run on the single big graph.
 
 We can classify the new trending topic taking the top-k influencers and selecting the class that has the highest score.
 
