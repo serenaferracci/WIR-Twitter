@@ -33,3 +33,6 @@ for folder in os.listdir(pagerank_test_folder):
     out=open(pagerank_test_folder+"/"+folder+"/topk.txt", "w")
     for elem in top_100:
         out.write(elem+"\n")
+
+
+    

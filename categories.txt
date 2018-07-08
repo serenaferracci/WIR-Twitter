@@ -1,8 +1,3 @@
-Politics
-Movie
-Sport
-Music
-Society
-Health
-Event
-Science
+version https://git-lfs.github.com/spec/v1
+oid sha256:107b1d967a11cadedaa13b2eca06484bb67adc4619350565c1f64e6c2edd9599
+size 55
