@@ -3,6 +3,7 @@
 \usepackage{mathptmx}
 \usepackage{graphicx}
 \usepackage{times}
+\usepackage[htt]{hyphenat}
 \usepackage{amsmath}
 \DeclareMathOperator*{\argmax}{arg\,max}
 
@@ -82,7 +83,7 @@ using Twitter APIs \cite{twitter} through Tweepy \cite{api}.
 
 In \texttt{tweets\_retrieve.py} we
 first retrieved trending topics from USA using USA WOEID (Where On Earth IDentifier, that is 23424977 for USA).
-Then, for each trending topic, we queried Twitter to get all tweets belonging to the given topic.
+Then, for each trending topic, we queried Twitter to get some tweets belonging to the given topic.
 We pay attention to retrieve the entire text of the tweet; in case of retweeted statuses we consider only the
 retweeted text.
 Twitter imposes some limitation on GET requests, in particular we could retrieve 180 tweets every 15 minutes.
@@ -165,7 +166,7 @@ to the test set and we made the algorithm predict these instances. We get at the
 We tried, also, another version of the program, \texttt{naive\_bayes\_stemming.py}, where we used the stemming technique:
 we tokenized each word, applying an \texttt{EnglishStemmer} from \texttt{nltk} \cite{nltk}.
 Making the vectorization phase together with stemming, we get the results shown in \ref{stemming}.
- 
+
 \begin{figure}[h]
  \centering
  \includegraphics[scale=0.5]{naive_bayes_stemming}
@@ -178,7 +179,7 @@ As we can see from \ref{no-stemming} and \ref{stemming}, we get lower results us
 \section{Network Based Classification}
 For this second approach, we exploited the structure of the social network. We assumed that if there is a significant overlap among users
 generating tweets on two topics, then it implies a close relationship between these two topics.
-network based data modeling uses the categories that are manually labeled in the previous approach to predict
+Network based data modeling uses the categories that are manually labeled in the previous approach to predict
 the category of a new trending topic.
 
 To compute the network based classification, we first had to construct the directed graph, that represents a small
@@ -187,61 +188,109 @@ In the directed graph every node represents an user and every edge represents a 
 If a node has an incoming edge, meaning it is followed by another node, we call the last one follower. Instead, if a node has an
 outgoing edge, meaning that it follows another node, we call the last one friend.
 
-The original idea to perform the network based classification was to construct a single graph for all the dataset, putting 
+We build this graph using the data retrieved from Twitter: the name of the file containing a tweet is the ID of the user that wrotes it.
+Together with this file we have the list of the followers and of the friends of this user saved in two different files.
+So we first add the user ID in the graph, then we read these two additional files to add all the friends and followers IDs and to
+create the corresponding edges.
+
+The original idea to perform the network based classification was to construct a single graph for all the dataset, putting
 together all the users, and their friends and followers, of every category.
-Once the graph is obtained, a personalized PageRank for each defined category is computed. 
-The purpose of this operation was to find the top-k influencers for each category. 
-An influencer is a user that obtain an high PageRank score, since PageRank is a way of measuring the importance of website pages.
-We could not put this idea into practice because the graph reached a dimension that was too high 
-to be managed by a single machine. 
+This graph represents our training, since it will be used to classify new trending topics.
+To classify new instances we have to add the new trending topic IDs (so all the ID of the users that wrotes a tweet in that
+trending topic together with all the followers and friends) to the graph and then compute Personalized PageRank with
+personalization vector $\hat{P}$ such that
+
+\bigskip
+
+\begin{center}
+$
+\hat{P}_i=
+\begin{cases}
+  0, & \mbox{if } i \not\in \mbox{ new trending topic} \\
+  1, & \mbox{otherwise }
+\end{cases}
+$
+\end{center}
+
+\bigskip
+
+In this way we can see all the users that are ``near'' to that new trending topic.
+We define an importance score as:
+
+\medskip
+
+\begin{center}
+$
+S_{c_t}=\sum\limits_{i \in c_t} pr(k)_i
+$
+\end{center}
+
+\medskip
+
+where $c_t$ is the $t$-th class and $pr(k)$ is the PageRank vector composed only of the first $k$ influencers
+(users that had the highest PageRank score).
+
+We can classify the new trending topic taking the top-k influencers and selecting the class that has the highest score.
+
+\medskip
+
+\begin{center}
+$
+\hat{y}=\argmax\limits_{t} S_{c_t}
+$
+\end{center}
+
+\medskip
+
+We could not put this idea into practice because the graph reached a dimension that was too high
+to be managed by a single machine.
 To mitigate the problem, we decide to split the graph in as many components as the number of categories.
 
-To construct the described graphs, we developed the python file \texttt{pagerank\_learning.py}, 
-in which we used the predefined library \texttt{NetworkX}. 
+To construct the described graphs, we developed the python file \texttt{pagerank\_learning.py},
+in which we used the predefined library \texttt{NetworkX}.
 The library offers to the programmer several functions that facilitate the construction of the graph.
-Once the graph is finalized, we compute the PageRank using a function present in the mentioned library.
-This function takes as parameter only the graph defined as describe above and returns a dictionary of nodes
-with the PageRank as value.
+Once the graph is finalized, we compute the PageRank using the function given by the library itself.
+This function takes as parameter only the graph defined above and returns a dictionary of nodes
+with the PageRank score as value.
 
 The purpose of this computation is to find the top-k influencers for each category. The top influencers
 are the ones that have the higher PageRank value.
 For every category, the program runs independently from previous executions. Each time we save in a
 distinct file the top-k influencers of that category. The name of the file is
 \texttt{topk.txt} and it is placed in the subfolder of that particular category in the training set folder.
-After the retrieve of the influencers for each category, the training is complete.
+As soon as the retrieve of the influencers for each category is finished, the training is completed.
 
-In order to perform the classification of a new trending topic, we proceeded as follows.
-We had to construct a distinct directed graph also for the new topic. The procedure is the same as the one performed
-to build the other directed graphs. Once the graph was complete, we executed the PageRank on it.
+In order to perform the classification of a new trending topic we had to construct a distinct directed graph
+also for the new topic. The procedure is the same as the one described above.
+Once the graph was built, we executed PageRank on it.
 As result we had the top-k influencers of this particular trending topic.
 
 At this point, we took the influencers computed in the training phase and the influencers computed in the
-last phase and we started to compute the intersection between the top-k influencers of the new topic and
+last phase and we computed the intersection between the top-k influencers of the new topic and
 all other sets of influencers.
-The result of the intersection will be the number of users that wrote a tweet about the new topic and, also,
-a tweet about the analyzed category.
-Once we had completed all the intersection, we order in descending order the categories according to the
-value obtained with the intersection. The category with the highest value it is the category
-to which the new topic is assigned.
+The intersection will contains all the users that are influencers both
+in the new trending topic and in the analyzed category.
+Once we had completed all the intersections, we took the class which intersection has biggest cardinality
+as classification for the new trending topic.
 
-It was not possible to obtain practical results, even after having applied the above modifications 
-to the original idea, because the memory of a single machine was not sufficient to keep the graph 
-resized and apply the PageRank.
+It was not possible to obtain practical results, even after having applied the above modifications
+to the original idea, because the memory of a single machine was not sufficient to keep the graph of almost all
+classes and apply PageRank.
 
 \section{Results}
 In this project, we used two different classification approaches for Twitter trending topic classification.
-We used text-based classification and we tried to exploit the social network structure rather than 
-using just textual information, which can lead to incorrect result due to the limit on the number of characters 
+We used text-based classification and we tried to exploit the social network structure rather than
+using just textual information, which can lead to incorrect result due to the limit on the number of characters
 that users are allowed to use for their messages and the use of Twitter slang.
 
-Analyzing the Naive Bayes approach, our results show that Naive Bayes without stemming 
-performed better than Naive Bayes with stemming on our dataset. Considering retrieved tweets are not 
+Analyzing the Naive Bayes approach, our results show that Naive Bayes without stemming
+performed better than Naive Bayes with stemming on our dataset. Considering retrieved tweets are not
 written only in English or in some cases using the regular English (the users use particular slangs or abbreviations),
 Naive Bayes using stemming provides worst results.
 
-Instead, analyzing the network based classification, we were able to obtain only theoretical results. 
-This problem is not due to errors in the proposed solution, which has been tested on a smaller dataset, 
-but to the lack of memory available on a single machine. 
+Instead, analyzing the network based classification, we were able to obtain only theoretical results.
+This problem is not due to errors in the proposed solution, which has been tested on a smaller dataset,
+but to the lack of memory available on a single machine.
 The original idea was to construct a single graph for all the dataset and then compute a personalized
 PageRank for each defined category to find the top-k influencers. To mitigate the memory problem, we decided
 to build a graph for each category and then compute the PageRank on these ones.
