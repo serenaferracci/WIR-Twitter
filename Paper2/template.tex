@@ -189,8 +189,8 @@ If a node has an incoming edge, meaning it is followed by another node, we call 
 outgoing edge, meaning that it follows another node, we call the last one friend.
 
 We build this graph using the data retrieved from Twitter: the name of the file containing a tweet is the ID of the user that wrotes it.
-Together with this file we have the list of the followers and of the friends of this user saved in two different files.
-So we first add the user ID in the graph, then we read these two additional files to add all the friends and followers IDs and to
+Together with this file we have the list of followers and of friends of this user saved in two different files.
+So we first add the user ID in the graph, then we read these two additional files to add all friends and followers IDs and to
 create the corresponding edges.
 
 The original idea to perform the network based classification was to construct a single big graph for all the dataset, putting
@@ -200,8 +200,8 @@ We first train the algorithm with a distinct graph for each category: we compute
 the top-k influencers of each category, namely $C_t=\{i : i \in pr(k, c_t)\}$, where $pr(k, c_t)$ is the PageRank of
 top-k influencers run on the graph of category $c_t$.
 
-To classify new instances we have to add the new trending topic IDs (so all the IDs of the users that wrotes a tweet in that
-trending topic together with all the followers and friends) to the single big graph mentioned above and then compute
+To classify new instances we have to add the new trending topic IDs (so all the IDs of users that wrote a tweet in that
+trending topic together with all their followers and friends) to the single big graph mentioned above and then compute
 Personalized PageRank with personalization vector $\hat{P}$ such that
 
 \bigskip
@@ -272,7 +272,7 @@ As result we had the top-k influencers of this particular trending topic.
 At this point, we took the influencers computed in the training phase and the influencers computed in the
 last phase and we computed the intersection between the top-k influencers of the new topic and
 all other sets of influencers.
-The intersection will contains all the users that are influencers both
+The intersection will contain all the users that are influencers both
 in the new trending topic and in the analyzed category.
 Once we had completed all the intersections, we took the class which intersection has biggest cardinality
 as classification for the new trending topic.
@@ -284,7 +284,7 @@ classes and apply PageRank.
 \section{Results}
 In this project, we used two different classification approaches for Twitter trending topic classification.
 We used text-based classification and we tried to exploit the social network structure rather than
-using just textual information, which can lead to incorrect result due to the limit on the number of characters
+using just textual information, which can lead to incorrect results due to the limit on the number of characters
 that users are allowed to use for their messages and the use of Twitter slang.
 
 Analyzing the Naive Bayes approach, our results show that Naive Bayes without stemming
