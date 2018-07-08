@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.26)  8 JUL 2018 11:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.26)  8 JUL 2018 11:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,7 +567,13 @@ Package pdftex.def Info: naive_bayes_stemming.png  used on input line 172.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+[]\OT1/ptm/m/n/8 Overview of net-workx.  [][]$\OT1/pcr/m/n/8 https : / / networ
+kx . github . io /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--15
 \OT1/pcr/m/n/8 twitter . com / en / docs / tweets / search / api-[]reference /
  []
 
@@ -587,10 +593,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
  ) 
 Here is how much of TeX's memory you used:
- 6177 strings out of 494839
- 90012 string characters out of 6178684
- 174973 words of memory out of 5000000
- 9376 multiletter control sequences out of 15000+600000
+ 6179 strings out of 494839
+ 90035 string characters out of 6178684
+ 175003 words of memory out of 5000000
+ 9377 multiletter control sequences out of 15000+600000
  50914 words of font info for 107 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  28i,8n,28p,521b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -605,10 +611,10 @@ uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><
 texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on template.pdf (4 pages, 350070 bytes).
+Output written on template.pdf (4 pages, 350517 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
